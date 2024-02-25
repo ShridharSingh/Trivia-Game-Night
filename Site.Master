@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Kodelab___Quiz_Night_Assessment__.NET_Framework_.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 position" />
+    <title><%: Page.Title %> - Quiz Night Game</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <%--mycustom css--%>
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+
+</head>
+<body>
+    <form runat="server">
+    <div>
+            <nav id="navbar_top" class="navbar navbar-fexed-top navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="Default.aspx">
+                    <img src="images/kodelab.jpg" width="60" height="50"/><b></b>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                
+                
+                <div class="collapse navbar-collapse" id="main_nav">
+                    <%--static webpages--%>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Default.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Rules.aspx">Rules</a>
+                        </li>
+                    </ul>
+
+                    <%--Dynamic webpages--%>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="True">Hi user</asp:LinkButton>
+                        </li>
+
+                    </ul>
+                </div>
+              </div>
+            </nav>
+        </div>
+
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+            <hr />
+            <footer>
+            <div id="footer1" class="container-fluid">
+                <br />
+            <div class="row">
+            <div class="col-md-3">
+             
+        </div>
+
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                       <p style="color:whitesmoke">&copy; <%: DateTime.Now.Year %> - All rights Reserved. Shridhar Singh</p>
+                    </div>
+                </div>
+            </div>
+
+          
+            </footer>
+      
+    </form>
+</body>
+</html>
